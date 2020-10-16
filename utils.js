@@ -24,3 +24,20 @@ export function consequences(pioneer, challenge, choice) {
     pioneer.supplies += Number(choice.supplies);
     pioneer.completed[challenge.id] = true;
 }
+
+export function noHp(pioneer) {
+    if (pioneer.hp <= 0) {
+        return true;
+    }
+}
+
+export function allDone(pioneer, challenges) {
+    for (let i = 0; i < challenges.length; i++) {
+        const challenge = challenges[i];
+        if (!pioneer.completed[challenge.id]) {
+            return false;
+        }
+    }
+
+    return true;
+}

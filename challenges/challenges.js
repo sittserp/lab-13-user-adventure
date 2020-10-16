@@ -14,6 +14,7 @@ const challenge = findById(challenges, id);
 const h1 = document.createElement('h1');
 const h3 = document.createElement('h3');
 const form = document.createElement('form');
+const h4 = document.createElement('h4');
 
 h1.textContent = challenge.title;
 h3.textContent = challenge.description;
@@ -64,6 +65,9 @@ form.addEventListener('submit', (e) => {
     consequences(pioneer, challenge, choice);
 
     setPioneer(pioneer);
+
+    h4.textContent = choice.result;
+    section.appendChild(h4);
 
     window.location.href = '/map/';
 
