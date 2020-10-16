@@ -7,7 +7,7 @@ const form = document.querySelector('form');
 
 // initialize state
 
-form.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const data = new FormData(form);
@@ -20,7 +20,7 @@ form.addEventListener('click', (e) => {
         completed: {}
     });
 
-    window.location.href = './map';
+    window.location.href = './map/';
 
 });
 
