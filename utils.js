@@ -18,3 +18,9 @@ export function findById(someArray, someId) {
         }
     }
 }
+
+export function consequences(pioneer, challenge, choice) {
+    pioneer.hp += Number(choice.hp);
+    pioneer.supplies += Number(choice.supplies);
+    pioneer.completed[challenge.id] = true;
+}

@@ -1,5 +1,7 @@
 import challenges from '../data.js';
-import { findById } from '../utils.js';
+import { findById, getPioneer, setPioneer, consequences } from '../utils.js';
+
+
 
 const section = document.querySelector('section');
 
@@ -45,9 +47,29 @@ form.appendChild(button);
 
 // get form data and hp/supplies from array like initial signup page 
 // and add to local storage
-button.addEventListener('click' => {
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-})
+    const data = new FormData(form);
+    const choiceId = data.get('choice');
+    console.log(challenges);
+    const choice = findById(challenge.choices, choiceId);
+
+    console.log(data, 'data');
+    console.log(choiceId, 'choiceId');
+    // console.log(choice, 'choice');
+
+    const pioneer = getPioneer();
+
+    consequences(pioneer, challenge, choice);
+
+    setPioneer(pioneer);
+
+    window.location.href = '/map/';
+
+});
 
 
 console.log(challenge.choices);
+const pioneer = getPioneer();
+console.log(pioneer);
