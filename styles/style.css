@@ -88,6 +88,14 @@ label {
     display: block;
 }
 
+h4 {
+    display: block;
+}
+
+button {
+    display: block;
+}
+
 content {
     width: 80%;
 }

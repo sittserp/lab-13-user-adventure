@@ -53,12 +53,7 @@ form.addEventListener('submit', (e) => {
 
     const data = new FormData(form);
     const choiceId = data.get('choice');
-    console.log(challenges);
     const choice = findById(challenge.choices, choiceId);
-
-    console.log(data, 'data');
-    console.log(choiceId, 'choiceId');
-    // console.log(choice, 'choice');
 
     const pioneer = getPioneer();
 
@@ -69,7 +64,15 @@ form.addEventListener('submit', (e) => {
     h4.textContent = choice.result;
     section.appendChild(h4);
 
-    window.location.href = '/map/';
+    button.style.display = 'none';
+
+    const mapButton = document.createElement('button');
+    mapButton.textContent = 'Return to Map';
+    h4.append(mapButton);
+    mapButton.addEventListener('click', () => {
+        window.location.href = '/map/';
+
+    });
 
 });
 
